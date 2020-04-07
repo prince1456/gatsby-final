@@ -1,8 +1,8 @@
 ---
-path: '/second-post'
-title: this is second article
+title: 'hello this is my first article '
+path: /second-post
 description: this is a short description for my post
-featureImage: 'img_lights.jpg'
+featureImage: img_lights.jpg
 date: '2020-04-03T11:00'
 ---
 

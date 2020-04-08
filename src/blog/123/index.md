@@ -5,18 +5,12 @@ path: /123
 description: A blog post written with Tina
 heading_color: '#C6C622'
 draft: true
-cool: How cool!
+cool: Love this!
 testNumber: 26
 featureImage: ../images/profile-pic.jpg
 fakeAuthor:
   name: Nolan Philipps
 gallery:
-  - alt: dff
-    src: >-
-      https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSQXE_7Go4FovH9bstguTZSXGwPapB5CwcraJtmLQICkJe9weEk&usqp=CAU
-    photographer:
-      name: ''
-      social: []
   - alt: dfsdf
     src: 'https://pbs.twimg.com/media/DWutZLNXUAAJixY.jpg'
     photographer:
@@ -27,8 +21,14 @@ gallery:
     photographer:
       name: ''
       social: []
+  - alt: dff
+    src: >-
+      https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSQXE_7Go4FovH9bstguTZSXGwPapB5CwcraJtmLQICkJe9weEk&usqp=CAU
+    photographer:
+      name: ''
+      social: []
 ---
-## The White Llama
+## The pretty butterfly 
 
 ![A white lama](https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg)
 

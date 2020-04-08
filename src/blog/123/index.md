@@ -11,20 +11,25 @@ featureImage: ../images/profile-pic.jpg
 fakeAuthor:
   name: Nolan Philipps
 gallery:
+  - alt: dff
+    src: >-
+      https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSQXE_7Go4FovH9bstguTZSXGwPapB5CwcraJtmLQICkJe9weEk&usqp=CAU
+    photographer:
+      name: ''
+      social: []
   - alt: dfsdf
-    src: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg'
+    src: 'https://pbs.twimg.com/media/DWutZLNXUAAJixY.jpg'
     photographer:
       name: ''
       social: []
   - alt: c
-    src: >-
-      https://www.google.com/url?sa=i&url=https%3A%2F%2Ftowardsdatascience.com%2F3-numpy-image-transformations-on-baby-yoda-c27c1409b411&psig=AOvVaw0tc6VMrMVHQWuWq-6icahL&ust=1586474130568000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPCexOr62egCFQAAAAAdAAAAABAE
+    src: 'https://openimagedenoise.github.io/images/moana_16spp_oidn.jpg'
     photographer:
       name: ''
       social: []
 ---
 ## The White Llama
 
-![A white lama](/images/white-lama.jpg)
+![A white lama](https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg)
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

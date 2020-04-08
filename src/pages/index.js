@@ -154,7 +154,7 @@ const CreatePostPlugin = new RemarkCreatorPlugin({
     path: rawFrontmatter.path,
     description: rawFrontmatter.description,
     featureImage: rawFrontmatter.featureImage,
-    date: rawFrontmatter.date || moment().format('lll'),
+    date: rawFrontmatter.date || moment().format(),
   }),
   body: form => `This is a new blog post. Please write some content.`,
 })

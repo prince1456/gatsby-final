@@ -24,6 +24,30 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: 'gatsby-plugin-tinacms',
+      options: {
+        sidebar: {
+          hidden: process.env.NODE_ENV === "production",
+          position: "fixed",
+        },
+        plugins: [
+          // {
+          //   resolve: 'gatsby-tinacms-git',
+          //   options: {
+          //     pathToRepo: 'github',
+          //     pathToContent: 'packages/demo-gatsby',
+          //     defaultCommitMessage: 'Edited with TinaCMS',
+          //     defaultCommitName: 'TinaCMS',
+          //     defaultCommitEmail: 'git@tinacms.org',
+          //     pushOnCommit: false,
+          //   },
+          // },
+          'gatsby-tinacms-git',
+          "gatsby-tinacms-remark",
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,

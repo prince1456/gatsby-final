@@ -11,6 +11,11 @@ featureImage: ../images/profile-pic.jpg
 fakeAuthor:
   name: Nolan Philipps
 gallery:
+  - alt: dfsdf
+    src: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg'
+    photographer:
+      name: ''
+      social: []
   - alt: c
     src: >-
       https://www.google.com/url?sa=i&url=https%3A%2F%2Ftowardsdatascience.com%2F3-numpy-image-transformations-on-baby-yoda-c27c1409b411&psig=AOvVaw0tc6VMrMVHQWuWq-6icahL&ust=1586474130568000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPCexOr62egCFQAAAAAdAAAAABAE

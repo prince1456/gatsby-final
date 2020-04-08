@@ -5,7 +5,7 @@ path: /123
 description: A blog post written with Tina
 heading_color: '#C6C622'
 draft: true
-cool: Llamas are great!
+cool: How cool!
 testNumber: 26
 featureImage: ../images/profile-pic.jpg
 fakeAuthor:

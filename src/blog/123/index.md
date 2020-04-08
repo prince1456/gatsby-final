@@ -3,7 +3,7 @@ title: A tribute to Llamas
 date: '2020-03-31'
 path: /123
 description: A blog post written with Tina
-heading_color: '#e6faf8'
+heading_color: '#C6C622'
 draft: true
 cool: Llamas are great!
 testNumber: 26

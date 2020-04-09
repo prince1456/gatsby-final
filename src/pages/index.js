@@ -75,9 +75,7 @@ export const query = graphql`
               }
             }
           }
-          fileRelativePath
-          rawFrontmatter
-          rawMarkdownBody
+          ...TinaRemark
           html
           id
         }
@@ -104,7 +102,6 @@ const CreatePostPlugin = new RemarkCreatorPlugin({
       previewSrc: (formValues, { input }) => {
         const path = input.name.replace('rawFrontmatter', 'frontmatter')
         const gatsbyImageNode = get(formValues, path)
-        console.log('formValue', formValues)
         if (!gatsbyImageNode) return ''
         //specific to gatsby-image
         return gatsbyImageNode.childImageSharp.fluid.src

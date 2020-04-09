@@ -1,9 +1,9 @@
 const path = require('path')
-
+const productsAPI = require('./mockData/data')
 exports.createPages = ({actions, graphql })  => {
     const { createPage } = actions
     const PostPage = path.resolve('src/template/post.js')
-
+    const productPage = path.resolve('src/template/product.js')
     return graphql(`{
         allMarkdownRemark {
             edges {
@@ -29,5 +29,17 @@ exports.createPages = ({actions, graphql })  => {
                 component: PostPage
             })
         })
+
+        const products = productsAPI.getProducts();
+        products.forEach(product => {
+          createPage({
+            path: product._id,
+            component: productPage,
+            context:  {
+              product
+            }
+          })
+        })
+
     })
 }

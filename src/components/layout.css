@@ -659,3 +659,13 @@ pre tt:after {
   background: rgb(250, 250, 250);
   padding: 20px 15px;
 }
+.top-search {
+    margin: 50px 150px
+}
+
+.left-column {
+  padding: 30px!important
+}
+.left-column h2 {
+  margin: 10px 0px
+}

@@ -1,6 +1,6 @@
 import React from "react"
 import { Breadcrumb, Button, Typography, Rate, Row, Col, Divider } from "antd"
-import { ProductCarousel } from '../components'
+import { ProductCarousel, ProductInfoBox,ProductOverview } from "../components"
 import { BREADCRUMP } from "./sampleData"
 import {
   FacebookOutlined,
@@ -8,16 +8,10 @@ import {
   MailOutlined,
 } from "@ant-design/icons"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
-const { Title, Paragraph, Text } = Typography
+const { Title, Text, Paragraph } = Typography
 const productPage = ({ pageContext: { product } }) => {
   console.log(product)
-  const props = {
-    zoomPosition: "original",
-    width: 720,
-    height: 500,
-    zoomWidth: 700,
-    scale: 1.3,
-  }
+
   return (
     <div style={{ maxWidth: 1200, margin: "150px auto" }}>
       <Breadcrumb style={{ marginBottom: 36, marginLeft: 16 }}>
@@ -55,70 +49,10 @@ const productPage = ({ pageContext: { product } }) => {
               </li>
             </ul>
           </Row>
-          <Row className="product-right-infoBox">
-            <Row style={{ display: "flex", flexDirection: "column" }}>
-              <Text delete>USD $ {product.price.max}sq ft</Text>
-              <Text style={{ fontSize: 12 }} type="warning">
-                Unlimited Offer Price
-              </Text>
-              <Text style={{ fontSize: 23 }} strong type="warning">
-                USD {product.price.min} / sq ft
-              </Text>
-              <Text style={{ fontSize: 14 }}>
-                Limited offer ends on January 31, 2018 PST
-              </Text>
-              <Text style={{ fontSize: 16, color: "#369824" }}>
-                Available to Ship on: Aug 15th
-              </Text>
-            </Row>
-            <Divider />
-            <Row style={{ display: "flex", flexDirection: "column" }}>
-              <Text style={{ fontSize: 14, marginBottom: 10 }} strong>
-                Other Styles:
-              </Text>
-              {Array(2).fill(0).length && (
-                <Row gutter={[32, 32]}>
-                  {Array(2)
-                    .fill(0)
-                    .map((ancestor, index) => {
-                      return (
-                        <Col key={index} span={4}>
-                          <img
-                            src={
-                              "https://d18178273alp6b.cloudfront.net/production/bdsellerassets/hardwood-flooring/jasper/images/jasper-hardwood---canadian-maple-collection/10098557-jasper-hardwood-canadian-maple-montebello-gray-comp_250.jpg"
-                            }
-                          />
-                        </Col>
-                      )
-                    })}
-                </Row>
-              )}
-              <Row style={{ display: "flex", flexDirection: "column" }}>
-                <Text>
-                  <Text strong> Style: </Text>Fraser
-                </Text>
-                <Text>
-                  <Text strong> Size: </Text>9mm
-                </Text>
-                <Text>
-                  <Text strong> Core Type: </Text>WPC
-                </Text>
-                <Text>
-                  <Text strong> installation Method: </Text>Click Lock
-                </Text>
-              </Row>
-
-              <Divider />
-
-              <Row>
-                <Text strong>Coverage</Text>
-              </Row>
-            </Row>
-          </Row>
+          <ProductInfoBox product={product} />
         </Col>
+        <ProductOverview />
       </Row>
-
-      <Button type="primary">Primary</Button>
     </div>
   )
 }

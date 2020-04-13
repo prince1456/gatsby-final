@@ -3,11 +3,11 @@ title: The pretty butterfly
 date: '2020-03-31'
 path: /123
 description: A blog post written with Tina
+featureImage: ../images/profile-pic.jpg
 heading_color: '#C6C622'
 draft: true
 cool: Love this!
 testNumber: 26
-featureImage: ../images/profile-pic.jpg
 fakeAuthor:
   name: Nolan Philipps
 gallery:

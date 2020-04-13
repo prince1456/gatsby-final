@@ -1,4 +1,4 @@
-import React, { memo } from "react"
+import React from "react"
 import { Carousel } from "react-responsive-carousel"
 import ReactImageZoom from "react-image-zoom"
 const ProductCarousel = () => {
@@ -9,7 +9,7 @@ const ProductCarousel = () => {
     zoomWidth: 700,
     scale: 1.4,
   }
-  
+
   return (
     <div>
       <Carousel showThumbs={true} showArrows={false} showIndicators={false}>
@@ -21,6 +21,7 @@ const ProductCarousel = () => {
             }
           />
           <img
+            alt=" "
             style={{}}
             src="https://d18178273alp6b.cloudfront.net/production/bdsellerassets/hardwood-flooring/jasper/images/jasper-hardwood---canadian-silver-maple-collection/15099752-edison-multi.jpg"
           />
@@ -31,6 +32,7 @@ const ProductCarousel = () => {
             img="https://d18178273alp6b.cloudfront.net/production/bdsellerassets/hardwood-flooring/jasper/images/jasper-hardwood---canadian-silver-maple-collection/updated-images/15099752-edison-room.jpg"
           />
           <img
+            alt=" "
             style={{}}
             src="https://d18178273alp6b.cloudfront.net/production/bdsellerassets/hardwood-flooring/jasper/images/jasper-hardwood---canadian-silver-maple-collection/updated-images/15099752-edison-room.jpg"
           />
@@ -41,6 +43,7 @@ const ProductCarousel = () => {
             img="https://www.gettyimages.ca/gi-resources/images/500px/983794168.jpg"
           />
           <img
+            alt=" "
             style={{}}
             src="https://www.gettyimages.ca/gi-resources/images/500px/983794168.jpg"
           />

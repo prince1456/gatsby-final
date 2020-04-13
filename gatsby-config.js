@@ -20,6 +20,14 @@ module.exports = {
         path: `${__dirname}/src/blog`
       }
     },
+    'gatsby-transformer-json',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: './mockData/data.json',
+        name: 'data'
+      }
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {

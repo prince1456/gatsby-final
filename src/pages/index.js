@@ -24,11 +24,9 @@ const IndexPage = ({
       <List
         grid={{
           gutter: 16,
-          xs: 1,
-          sm: 2,
-          md: 4,
-          lg: 4,
-          xl: 6,
+          md: 3,
+          lg: 3,
+          xl: 3,
           xxl: 3,
         }}
         dataSource={edges}
@@ -152,6 +150,10 @@ const CreatePostPlugin = new RemarkCreatorPlugin({
     description: rawFrontmatter.description,
     featureImage: rawFrontmatter.featureImage,
     date: rawFrontmatter.date || moment().format(),
+    heading_color: '#C6C622',
+    cool: 'Love this!',
+    gallery: []
+
   }),
   body: form => `This is a new blog post. Please write some content.`,
 })
@@ -159,3 +161,6 @@ const CreatePostPlugin = new RemarkCreatorPlugin({
 // 3. Add the plugin to the component
 export default withPlugin(IndexPage, CreatePostPlugin)
 // export default IndexPage
+
+
+

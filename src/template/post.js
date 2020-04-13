@@ -9,17 +9,17 @@ import { ModalProvider } from "tinacms"
 import { Carousel } from 'antd';
 import {
   InlineForm,
-  InlineBlocks,
+  // InlineBlocks,
   InlineTextareaField,
   InlineWysiwyg,
-  InlineTextField,
+  // InlineTextField,
   useInlineForm,
   InlineImageField,
 } from "react-tinacms-inline"
 
 import { useCMS } from "tinacms"
 
-const get = require("lodash.get")
+// const get = require("lodash.get")
 
 function BlogPostTemplate(props) {
   const siteTitle = props.data.site.siteMetadata.title

@@ -1,0 +1,25 @@
+---
+title: 1133dsasda
+path: /ssds
+description: Im Description
+featureImage: ../images/Screen Shot 2020-03-24 at 9.42.20 AM.png
+date: '2020-04-13T13:05:20-07:00'
+heading_color: '#C6C622'
+cool: Love this!
+gallery:
+  - alt: dfsdf
+    src: >-
+      https://images.unsplash.com/photo-1567552379232-c32f3d41d353?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80
+    photographer:
+      name: ''
+      social: []
+blocks:
+  - content: im first block
+    _template: ContentBlock
+  - content: Hi im second block
+    _template: ContentBlock
+testNumber: 1
+---
+# this is header
+
+This is a new blog post. Please write some content.gd

@@ -20,8 +20,13 @@ gallery:
       name: ''
       social: []
 blocks:
-  - _template: heading
+  - _template: image
     text: ''
+    src: >-
+      https://images.unsplash.com/photo-1568988711638-492dae5e9642?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80
+    alt: aa
+  - _template: heading
+    text: dadasdas
 testNumber: 1
 ---
 # this is headerf dadasdas

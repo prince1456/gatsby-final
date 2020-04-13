@@ -26,4 +26,4 @@ testNumber: 1
 
 This is a new blog post. Please write some content.gdf afa
 
-    amport React from 'react'
+    import React from 'react'

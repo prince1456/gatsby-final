@@ -11,6 +11,11 @@ testNumber: 26
 fakeAuthor:
   name: Nolan Philipps
 gallery:
+  - alt: car
+    src: 'https://cdn.wallpapersafari.com/71/63/qLFiDd.jpg'
+    photographer:
+      name: ''
+      social: []
   - alt: stone
     src: >-
       https://secureservercdn.net/198.71.233.129/j3g.7db.myftpupload.com/wp-content/uploads/2019/06/Change-your-perception-@myofficebooks-1200-x-800-px.jpg?time=1569069254

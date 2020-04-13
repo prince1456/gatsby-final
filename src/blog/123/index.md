@@ -9,7 +9,9 @@ draft: true
 cool: Love this!
 testNumber: 26
 fakeAuthor:
-  name: Nolan Philipps
+  name: Ali Alizada
+  social:
+    facebook: 'https://www.facebook.com/akbar.alizadeh2?ref=bookmarks'
 gallery:
   - alt: sss
     src: >-
@@ -28,6 +30,16 @@ gallery:
     photographer:
       name: ''
       social: []
+blocks:
+  - _template: heading
+  - _template: image
+    text: ''
+    height: 250
+    width: 1200
+    src: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Honda_Gold_Wing_GL_1800_%28SC79_-_2018%29.jpg/1200px-Honda_Gold_Wing_GL_1800_%28SC79_-_2018%29.jpg
+    alt: bike
+    padding: 10px 20px 30px 50px
 ---
 ## The pretty butterfly 
 

@@ -1,5 +1,5 @@
 ---
-title: 1133dsasdadfa
+title: How to write a better javascript code.
 path: /ssds
 description: Im Description
 featureImage: ./Screen Shot 2020-03-31 at 3.42.10 PM.png

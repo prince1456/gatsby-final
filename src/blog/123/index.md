@@ -11,7 +11,7 @@ testNumber: 26
 fakeAuthor:
   name: Nolan Philipps
 gallery:
-  - alt: dfsdf
+  - alt: '123'
     src: 'https://pbs.twimg.com/media/DWutZLNXUAAJixY.jpg'
     photographer:
       name: ''

@@ -1,8 +1,8 @@
 ---
-title: 1133dsasda
+title: 1133dsasdadfa
 path: /ssds
 description: Im Description
-featureImage: ../images/Screen Shot 2020-03-24 at 9.42.20 AM.png
+featureImage: ./Screen Shot 2020-03-31 at 3.42.10 PM.png
 date: '2020-04-13T13:05:20-07:00'
 heading_color: '#C6C622'
 cool: Love this!
@@ -19,9 +19,13 @@ gallery:
     photographer:
       name: ''
       social: []
-blocks: []
+blocks:
+  - _template: heading
+    text: ''
 testNumber: 1
 ---
-# this is header
+# this is headerf dadasdas
 
-This is a new blog post. Please write some content.gd
+This is a new blog post. Please write some content.gdf afa
+
+    amport React from 'react'

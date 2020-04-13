@@ -13,11 +13,7 @@ gallery:
     photographer:
       name: ''
       social: []
-blocks:
-  - content: im first block
-    _template: ContentBlock
-  - content: Hi im second block
-    _template: ContentBlock
+blocks: []
 testNumber: 1
 ---
 # this is header

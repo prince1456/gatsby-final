@@ -11,19 +11,9 @@ testNumber: 26
 fakeAuthor:
   name: Nolan Philipps
 gallery:
-  - alt: bb
-    src: 'https://pbs.twimg.com/media/DWutZLNXUAAJixY.jpg'
-    photographer:
-      name: ''
-      social: []
-  - alt: car
-    src: 'https://cdn.wallpapersafari.com/71/63/qLFiDd.jpg'
-    photographer:
-      name: ''
-      social: []
-  - alt: dff
+  - alt: stone
     src: >-
-      https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSQXE_7Go4FovH9bstguTZSXGwPapB5CwcraJtmLQICkJe9weEk&usqp=CAU
+      https://secureservercdn.net/198.71.233.129/j3g.7db.myftpupload.com/wp-content/uploads/2019/06/Change-your-perception-@myofficebooks-1200-x-800-px.jpg?time=1569069254
     photographer:
       name: ''
       social: []

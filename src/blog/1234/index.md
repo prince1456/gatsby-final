@@ -6,7 +6,7 @@ featureImage: ../images/Screen Shot 2020-04-08 at 2.24.50 PM (3).png
 date: '2020-04-09T10:44:43-07:00'
 heading_color: '#954D11'
 draft: true
-cool: Love this!
+cool: How cool!
 testNumber: 26
 fakeAuthor:
   name: Nolan Philipps

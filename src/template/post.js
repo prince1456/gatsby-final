@@ -16,15 +16,19 @@ import {
   InlineImageField,
 } from "react-tinacms-inline"
 import { BLOCKS, EditToggle } from "../components"
+import { Typography, Row, Col, Input } from "antd"
 import { useCMS } from "tinacms"
-import './post.css';
+import "./post.css"
+
+const { Search } = Input
+const { Title, Paragraph } = Typography
 
 // const get = require("lodash.get")
 
 function BlogPostTemplate(props) {
   const siteTitle = props.data.site.siteMetadata.title
   const { previous, next } = props.pageContext
-
+  const { allMarkdownRemark: { edges } } = props.data
   const cms = useCMS()
   const [post, form] = useLocalRemarkForm(
     props.data.markdownRemark,
@@ -34,46 +38,50 @@ function BlogPostTemplate(props) {
     <ModalProvider>
       <InlineForm form={form}>
         <Layout location={props.location} title={siteTitle}>
-          {post.frontmatter.gallery && post.frontmatter.gallery.length > 0 && (
-            <Carousel effect="fade">
-              {post.frontmatter.gallery.map((item, id) => {
-                return (
-                  <div className="blog-slideshow--slide" key={id}>
-                    <img src={item.src} alt={item.alt} />
-                  </div>
-                )
-              })}
-            </Carousel>
-          )}
-
-          <div
-            style={{
-              backgroundColor: post.frontmatter.heading_color || "#ffffff",
-            }}
-          >
-            <div
-              style={{
-                marginLeft: `auto`,
-                marginRight: `auto`,
-                padding: 25,
-              }}
-            >
-              <h1
-                style={{
-                  margin: 0,
-                  marginTop: 10,
-                }}
-              >
-                <InlineTextareaField name="rawFrontmatter.title" />
-              </h1>
+          <div className="blog-top-picture">
+            <Title>Blog</Title>
+          </div>
+          <Row>
+            <Col style={{paddingRight: 40}} span={16}>
+              {post.frontmatter.gallery && post.frontmatter.gallery.length > 0 && (
+                <Carousel effect="fade">
+                  {post.frontmatter.gallery.map((item, id) => {
+                    return (
+                      <div className="blog-slideshow--slide" key={id}>
+                        <img src={item.src} alt={item.alt} />
+                      </div>
+                    )
+                  })}
+                </Carousel>
+              )}
               <div
                 style={{
-                  display: "flex",
-                  justifyContent: "space-between",
+                  backgroundColor: post.frontmatter.heading_color || "#ffffff",
                 }}
               >
-                <div style={{ display: "flex", flexDirection: "column" }}>
-                  <InlineImageField
+                <div
+                  style={{
+                    marginLeft: `auto`,
+                    marginRight: `auto`,
+                    padding: 25,
+                  }}
+                >
+                  <Title
+                    style={{
+                      margin: 0,
+                      marginTop: 10,
+                    }}
+                  >
+                    <InlineTextareaField name="rawFrontmatter.title" />
+                  </Title>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <div style={{ display: "flex", flexDirection: "column" }}>
+                      {/* <InlineImageField
                     name="rawFrontmatter.featureImage"
                     // Generate the frontmatter value based on the filename
                     parse={filename =>
@@ -97,18 +105,19 @@ function BlogPostTemplate(props) {
                       }
                       alt="Gatsby can't find me"
                     />
-                  </InlineImageField>
-                  {/* <Img
+                  </InlineImageField> */}
+                      {/* <Img
                     fluid={post.frontmatter.featureImage.childImageSharp.fluid}
                     alt="Gatsby can't find me"
                   /> */}
-                  <span style={{ fontWeight: "600" }}>Date</span>
-                  <p>{post.frontmatter.date}</p>
-                </div>
-                {/**
-                 * TODO: make inline toggle
-                 */}
-                {/* <TinaField
+                      <span style={{ fontWeight: "600" }}>
+                        Date: {post.frontmatter.date}
+                      </span>
+                    </div>
+                    {/**
+                     * TODO: make inline toggle
+                     */}
+                    {/* <TinaField
                   name="rawFrontmatter.draft"
                   Component={MyToggle}
                   type="checkbox"
@@ -117,93 +126,112 @@ function BlogPostTemplate(props) {
                     <small style={{ color: "fuchsia" }}>Draft</small>
                   )}
                 </TinaField> */}
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
 
-          <div
-            style={{
-              marginLeft: `auto`,
-              marginRight: `auto`,
-            }}
-          >
-            {/**
-             * TODO: make inline select
-             */}
+              <div
+                style={{
+                  marginLeft: `auto`,
+                  marginRight: `auto`,
+                }}
+              >
+                {/**
+                 * TODO: make inline select
+                 */}
 
-            {/* <TinaField
+                {/* <TinaField
               name="rawFrontmatter.cool"
               Component={MySelect}
               options={[100, "Love this!", "How cool!"]}
             >
               <p>{post.frontmatter.cool}</p>
             </TinaField> */}
-            <p>{post.frontmatter.cool}</p>
+                <p>{post.frontmatter.cool}</p>
 
-            <InlineBlocks
-              name="rawFrontmatter.blocks"
-              blocks={BLOCKS}
-            ></InlineBlocks>
+                <InlineBlocks
+                  name="rawFrontmatter.blocks"
+                  blocks={BLOCKS}
+                ></InlineBlocks>
 
-            <InlineWysiwyg
-              name="rawMarkdownBody"
-              imageProps={{
-                async upload(files) {
-                  const directory = "/static/images/"
+                <InlineWysiwyg
+                  name="rawMarkdownBody"
+                  imageProps={{
+                    async upload(files) {
+                      const directory = "/static/images/"
 
-                  let media = await cms.media.store.persist(
-                    files.map(file => ({
-                      directory,
-                      file,
-                    }))
-                  )
+                      let media = await cms.media.store.persist(
+                        files.map(file => ({
+                          directory,
+                          file,
+                        }))
+                      )
 
-                  return media.map(m => `/images/${m.filename}`)
-                },
-              }}
-            >
+                      return media.map(m => `/images/${m.filename}`)
+                    },
+                  }}
+                >
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: props.data.markdownRemark.html,
+                    }}
+                  />
+                </InlineWysiwyg>
+              </div>
+              <EditToggle />
+
               <div
-                dangerouslySetInnerHTML={{
-                  __html: props.data.markdownRemark.html,
+                style={{
+                  width: "100%",
+                  height: "1px",
+                  backgroundColor: "#eaeaea",
                 }}
               />
-            </InlineWysiwyg>
-          </div>
-          <EditToggle />
-
-          <div
-            style={{
-              width: "100%",
-              height: "1px",
-              backgroundColor: "#eaeaea",
-            }}
-          />
-          <ul
-            style={{
-              marginLeft: `auto`,
-              marginRight: `auto`,
-              display: `flex`,
-              flexWrap: `wrap`,
-              justifyContent: `space-between`,
-              listStyle: `none`,
-              padding: 0,
-            }}
-          >
-            <li>
-              {previous && (
-                <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
-                </Link>
-              )}
-            </li>
-            <li>
-              {next && (
-                <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
-                </Link>
-              )}
-            </li>
-          </ul>
+              <ul
+                style={{
+                  marginLeft: `auto`,
+                  marginRight: `auto`,
+                  display: `flex`,
+                  flexWrap: `wrap`,
+                  justifyContent: `space-between`,
+                  listStyle: `none`,
+                  padding: 0,
+                }}
+              >
+                <li>
+                  {previous && (
+                    <Link to={previous.fields.slug} rel="prev">
+                      ← {previous.frontmatter.title}
+                    </Link>
+                  )}
+                </li>
+                <li>
+                  {next && (
+                    <Link to={next.fields.slug} rel="next">
+                      {next.frontmatter.title} →
+                    </Link>
+                  )}
+                </li>
+              </ul>
+            </Col>
+            <Col span={8}>
+              <Search
+                placeholder="input search text"
+                onSearch={value => console.log(value)}
+                style={{ width: 200, marginBottom: 30 }}
+              />
+              {
+                edges.map(({node: { frontmatter }}, index) => (
+                  <div key={index} style={{display: 'flex'}}>
+                    <Img style={{width: 100, height: 100}} fluid={frontmatter.featureImage.childImageSharp.fluid} />
+                    <Paragraph ellipsis style={{paddingLeft: 10, fontSize: 16}} >
+                      {frontmatter.title}
+                    </Paragraph>
+                  </div>
+                ))
+              }
+            </Col>
+          </Row>
         </Layout>
       </InlineForm>
     </ModalProvider>
@@ -278,7 +306,7 @@ const BlogPostForm = {
       name: "frontmatter.fakeAuthor",
       component: "group",
       fields: [
-        { name: "name", label: 'Full Name', component: "text" },
+        { name: "name", label: "Full Name", component: "text" },
         {
           name: "social",
           component: "group",
@@ -401,6 +429,22 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+      }
+    }
+    allMarkdownRemark(limit: 3) {
+      edges {
+        node {
+          frontmatter {
+            title
+            featureImage {
+              childImageSharp {
+                fluid(maxHeight: 100 maxWidth: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
       }
     }
     markdownRemark(frontmatter: { path: { eq: $path } }) {

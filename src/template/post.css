@@ -1,9 +1,21 @@
 .blog-slideshow--slide {
-    width: 1200px;
-    /* height: 450px; */
-  }
-  .blog-slideshow--slide img {
-    object-fit: cover;
-    height: 500px;
-    width: 100%;
-  }
+  width: 1200px;
+  /* height: 450px; */
+}
+.blog-slideshow--slide img {
+  object-fit: cover;
+  height: 500px;
+  width: 100%;
+}
+
+.blog-top-picture {
+  background: transparent
+    url("https://www.builddirect.com/blog/wp-content/themes/goblog-child/images/blog-header.png")
+    no-repeat 50% 50%;
+  background-size: cover;
+  width: 100%;
+  height: 65px;
+  align-items: center;
+  padding-left: 100px;
+  margin-bottom: 10px;
+}

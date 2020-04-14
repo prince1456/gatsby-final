@@ -5,19 +5,7 @@ description: this is a short description for my post
 featureImage: img_lights.jpg
 date: '2020-04-03T11:00'
 heading_color: '#FFFFFF'
-gallery:
-  - alt: dashboard
-    src: >-
-      https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/removing-a-car-lien-1200x800.jpeg
-    photographer:
-      name: ''
-      social: []
-  - alt: bic
-    src: >-
-      https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRtUwDsatdb42QrlUs22Nn1-PSKg8egZgTVnPaRDk1cGzbgmRmf&usqp=CAU
-    photographer:
-      name: ''
-      social: []
+gallery: []
 blocks: []
 ---
 COVID-19 is currently sweeping across the globe, creating a worldwide health crisis that’s impacting nearly everyone on the planet. While authorities grapple with how they can stop the spread of this global pandemic and flatten the growth curve, average citizens are left to figure out how they can go on with their lives while implementing new social distancing measures.

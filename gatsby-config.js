@@ -1,10 +1,42 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `BuildDirect POC`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-mdx`,
+    `gatsby-tinacms-mdx`,
+    {
+      resolve: "gatsby-plugin-tinacms",
+      options: {
+        manualInit: true,
+        sidebar: {
+          hidden: process.env.NODE_ENV === "production",
+          position: "displace",
+        },
+        toolbar: {
+          hidden: false,
+        },
+        plugins: [
+          "gatsby-tinacms-teams",
+          "gatsby-tinacms-json",
+          "gatsby-tinacms-remark",
+          'gatsby-tinacms-git',
+          // {
+          //   resolve: "gatsby-tinacms-git",
+          //   options: {
+          //     pathToRepo: 'https://github.com/prince1456/gatsby-final',
+          //     // pathToContent: "packages/demo-gatsby",
+          //     defaultCommitMessage: "chore: update from tina",
+          //     defaultCommitName: "TinaCMS",
+          //     defaultCommitEmail: "akbar.alizadeh5@gmail.com",
+          //     pushOnCommit: false,
+          //   },
+          // },
+        ],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -49,34 +81,11 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: 'gatsby-plugin-tinacms',
-      options: {
-        sidebar: {
-          hidden: process.env.NODE_ENV === "production",
-          position: "fixed",
-        },
-        plugins: [
-          // {
-          //   resolve: 'gatsby-tinacms-git',
-          //   options: {
-          //     pathToRepo: 'github',
-          //     pathToContent: 'packages/demo-gatsby',
-          //     defaultCommitMessage: 'Edited with TinaCMS',
-          //     defaultCommitName: 'TinaCMS',
-          //     defaultCommitEmail: 'git@tinacms.org',
-          //     pushOnCommit: false,
-          //   },
-          // },
-          'gatsby-tinacms-git',
-          "gatsby-tinacms-remark",
-        ],
-      },
-    },
+   
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
+        name: `BuildDirect POC`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,

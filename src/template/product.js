@@ -2,6 +2,7 @@ import React from "react"
 import { Breadcrumb, Button, Typography, Rate, Row, Col, Divider } from "antd"
 import { ProductCarousel, ProductInfoBox,ProductOverview } from "../components"
 import { BREADCRUMP } from "./sampleData"
+import {Layout } from '../components'
 import {
   FacebookOutlined,
   TwitterOutlined,
@@ -13,7 +14,8 @@ const productPage = ({ pageContext: { product } }) => {
   console.log(product)
 
   return (
-    <div style={{ maxWidth: 1200, margin: "150px auto" }}>
+    // <div style={{ maxWidth: 1200, margin: "150px auto" }}>
+    <Layout>
       <Breadcrumb style={{ marginBottom: 36, marginLeft: 16 }}>
         {BREADCRUMP.map(item => {
           return <Breadcrumb.Item key={item}>{item}</Breadcrumb.Item>
@@ -53,7 +55,7 @@ const productPage = ({ pageContext: { product } }) => {
         </Col>
         <ProductOverview />
       </Row>
-    </div>
+    </Layout>
   )
 }
 

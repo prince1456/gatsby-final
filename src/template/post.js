@@ -1,23 +1,23 @@
-
 import React from "react"
 import { Link, graphql } from "gatsby"
-
 import Layout from "../components/layout"
 import { useLocalRemarkForm, DeleteAction } from "gatsby-tinacms-remark"
 import Img from "gatsby-image"
 import { ModalProvider } from "tinacms"
-import { Carousel } from 'antd';
+import { Carousel } from "antd"
+
 import {
   InlineForm,
-  // InlineBlocks,
+  InlineBlocks,
   InlineTextareaField,
   InlineWysiwyg,
   // InlineTextField,
   useInlineForm,
   InlineImageField,
 } from "react-tinacms-inline"
-
+import { BLOCKS, EditToggle } from "../components"
 import { useCMS } from "tinacms"
+import './post.css';
 
 // const get = require("lodash.get")
 
@@ -34,13 +34,17 @@ function BlogPostTemplate(props) {
     <ModalProvider>
       <InlineForm form={form}>
         <Layout location={props.location} title={siteTitle}>
-         { post.frontmatter.gallery.length &&
-              <Carousel effect="fade">
-              {  post.frontmatter.gallery.map((item, id) => {
-                return <div key={id}><img src={item.src} alt={item.alt} /></div>
-               }) }
-              </Carousel>
-          }
+          {post.frontmatter.gallery && post.frontmatter.gallery.length > 0 && (
+            <Carousel effect="fade">
+              {post.frontmatter.gallery.map((item, id) => {
+                return (
+                  <div className="blog-slideshow--slide" key={id}>
+                    <img src={item.src} alt={item.alt} />
+                  </div>
+                )
+              })}
+            </Carousel>
+          )}
 
           <div
             style={{
@@ -51,13 +55,13 @@ function BlogPostTemplate(props) {
               style={{
                 marginLeft: `auto`,
                 marginRight: `auto`,
-               
+                padding: 25,
               }}
             >
               <h1
                 style={{
                   margin: 0,
-                  
+                  marginTop: 10,
                 }}
               >
                 <InlineTextareaField name="rawFrontmatter.title" />
@@ -66,29 +70,31 @@ function BlogPostTemplate(props) {
                 style={{
                   display: "flex",
                   justifyContent: "space-between",
-     
                 }}
               >
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <InlineImageField
                     name="rawFrontmatter.featureImage"
                     // Generate the frontmatter value based on the filename
-                    parse={filename => (filename ? `./${filename}` : null)}
+                    parse={filename =>
+                      filename ? `../images/${filename}` : null
+                    }
                     // Decide the file upload directory for the post
                     uploadDir={blogPost => {
+                      console.log({ blogPost })
                       const postPathParts = blogPost.initialValues.fileRelativePath.split(
                         "/"
                       )
-
                       const postDirectory = postPathParts
-                        .splice(0, postPathParts.length - 1)
+                        .splice(0, postPathParts.length - 2)
                         .join("/")
-
-                      return postDirectory
+                      return `${postDirectory}/images/`
                     }}
                   >
                     <Img
-                      fluid={post.frontmatter.featureImage.childImageSharp.fluid}
+                      fluid={
+                        post.frontmatter.featureImage.childImageSharp.fluid
+                      }
                       alt="Gatsby can't find me"
                     />
                   </InlineImageField>
@@ -119,7 +125,6 @@ function BlogPostTemplate(props) {
             style={{
               marginLeft: `auto`,
               marginRight: `auto`,
-     
             }}
           >
             {/**
@@ -134,7 +139,12 @@ function BlogPostTemplate(props) {
               <p>{post.frontmatter.cool}</p>
             </TinaField> */}
             <p>{post.frontmatter.cool}</p>
-            
+
+            <InlineBlocks
+              name="rawFrontmatter.blocks"
+              blocks={BLOCKS}
+            ></InlineBlocks>
+
             <InlineWysiwyg
               name="rawMarkdownBody"
               imageProps={{
@@ -159,6 +169,8 @@ function BlogPostTemplate(props) {
               />
             </InlineWysiwyg>
           </div>
+          <EditToggle />
+
           <div
             style={{
               width: "100%",
@@ -201,6 +213,16 @@ function BlogPostTemplate(props) {
 /**
  * Blog Post Form
  */
+
+export const ContentBlock = {
+  label: "Content",
+  key: "content-block",
+  defaultItem: {
+    content: "",
+  },
+  fields: [{ name: "content", label: "Content", component: "markdown" }],
+}
+
 const BlogPostForm = {
   actions: [DeleteAction],
   fields: [
@@ -242,11 +264,21 @@ const BlogPostForm = {
       ],
     },
     {
-      label: "Fake Author",
+      label: "Page Sections",
+      name: "frontmatter.blocks",
+      component: "blocks",
+      templates: {
+        // TitleBlock,
+        // ImageBlock,
+        ContentBlock,
+      },
+    },
+    {
+      label: "Author",
       name: "frontmatter.fakeAuthor",
       component: "group",
       fields: [
-        { name: "name", component: "text" },
+        { name: "name", label: 'Full Name', component: "text" },
         {
           name: "social",
           component: "group",
@@ -384,12 +416,12 @@ export const pageQuery = graphql`
         #   src
         # }
         gallery {
-            alt
-            src
-            photographer {
-              name
-            }
+          alt
+          src
+          photographer {
+            name
           }
+        }
         title
         date(formatString: "DD MMMM, YYYY")
         description

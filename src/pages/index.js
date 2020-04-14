@@ -16,11 +16,9 @@ const IndexPage = ({
   data: {
     allMarkdownRemark: { edges },
   },
-}) =>
-  console.log(edges) || (
+}) => (
     <Layout>
       <SEO title="Home" />
-      <h1>Hi people</h1>
       <List
         grid={{
           gutter: 16,
@@ -106,9 +104,17 @@ const CreatePostPlugin = new RemarkCreatorPlugin({
       },
 
       // upload images to same directory as content file
-      uploadDir: (blogPost, hh) => {
-        console.log(hh)
-        return path.join(`src/blog/`, 'images')
+      uploadDir: blogPost => {
+        console.log({blogPost})
+        const postPathParts = blogPost.initialValues.fileRelativePath.split(
+          "/"
+        )
+
+        const postDirectory = postPathParts
+          .splice(0, postPathParts.length - 1)
+          .join("/")
+
+        return postDirectory
       },
 
       // image file is sibling of content file
@@ -143,7 +149,7 @@ const CreatePostPlugin = new RemarkCreatorPlugin({
     let slug = form.rawFrontmatter.path.replace(/\s+/, '-').toLowerCase()
     return `src/blog/${slug}/index.md`
   },
-  frontmatter: ({rawFrontmatter}) => console.log(rawFrontmatter) || ({
+  frontmatter: ({rawFrontmatter}) => console.log({rawFrontmatter}) || ({
 
     title: rawFrontmatter.title,
     path: rawFrontmatter.path,
@@ -155,12 +161,12 @@ const CreatePostPlugin = new RemarkCreatorPlugin({
     gallery: []
 
   }),
-  body: form => `This is a new blog post. Please write some content.`,
+  body: form => {
+    console.log(form)
+  return `This is a new blog post. Please write some content.`
+  }
 })
 
 // 3. Add the plugin to the component
 export default withPlugin(IndexPage, CreatePostPlugin)
 // export default IndexPage
-
-
-

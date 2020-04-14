@@ -18,5 +18,8 @@ gallery:
     photographer:
       name: ''
       social: []
+blocks:
+  - _template: image
+    text: ''
 ---
 This is a new blog post. Please write some content.

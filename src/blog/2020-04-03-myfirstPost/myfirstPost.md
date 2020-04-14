@@ -4,6 +4,14 @@ path: /first-post
 description: this is a short description for my post
 featureImage: img_lights.jpg
 date: '2020-04-03T11:00'
+heading_color: '#E6E6E6'
+gallery:
+  - alt: bic
+    src: >-
+      https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRtUwDsatdb42QrlUs22Nn1-PSKg8egZgTVnPaRDk1cGzbgmRmf&usqp=CAU
+    photographer:
+      name: ''
+      social: []
 ---
 
 

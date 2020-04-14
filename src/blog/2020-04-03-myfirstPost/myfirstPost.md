@@ -4,7 +4,7 @@ path: /first-post
 description: this is a short description for my post
 featureImage: img_lights.jpg
 date: '2020-04-03T11:00'
-heading_color: '#E6E6E6'
+heading_color: '#FFFFFF'
 gallery:
   - alt: dashboard
     src: >-

@@ -25,7 +25,8 @@ COVID-19 is currently sweeping across the globe, creating a worldwide health cri
 Shopping from home during COVID-19 is one of the best ways to reduce your risk of getting sick. This is true even during an average flu season, particularly for individuals with health problems who are more susceptible to falling ill. Use this guide to learn more about the benefits of shopping from home during a pandemic.
 
 #### ![aa](https://www.builddirect.com/blog/wp-content/uploads/2020/04/shopping-from-home-during-covid-19-640x428.jpg "dasd")
-**Shopping from Home During COVID-19 Helps You Avoid Crowds**.
+
+## **Shopping from Home During COVID-19 Helps You Avoid Crowds**.
 
 Your risk of getting sick goes up every time you come into contact with another person, particularly when dealing with an outbreak like COVID-19 where people may have the virus without even knowing it. You may also be passing the virus along to other at-risk members of the population even if you aren’t showing signs or symptoms of being ill yourself.
 

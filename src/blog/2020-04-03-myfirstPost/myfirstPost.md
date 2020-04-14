@@ -6,6 +6,12 @@ featureImage: img_lights.jpg
 date: '2020-04-03T11:00'
 heading_color: '#E6E6E6'
 gallery:
+  - alt: dashboard
+    src: >-
+      https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/removing-a-car-lien-1200x800.jpeg
+    photographer:
+      name: ''
+      social: []
   - alt: bic
     src: >-
       https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRtUwDsatdb42QrlUs22Nn1-PSKg8egZgTVnPaRDk1cGzbgmRmf&usqp=CAU

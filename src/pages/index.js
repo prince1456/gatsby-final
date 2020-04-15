@@ -106,15 +106,7 @@ const CreatePostPlugin = new RemarkCreatorPlugin({
       // upload images to same directory as content file
       uploadDir: blogPost => {
         console.log({blogPost})
-        const postPathParts = blogPost.initialValues.fileRelativePath.split(
-          "/"
-        )
-
-        const postDirectory = postPathParts
-          .splice(0, postPathParts.length - 1)
-          .join("/")
-
-        return postDirectory
+        return `${__dirname}/src/blog/images`
       },
 
       // image file is sibling of content file

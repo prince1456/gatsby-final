@@ -22,7 +22,13 @@ module.exports = {
           "gatsby-tinacms-teams",
           "gatsby-tinacms-json",
           "gatsby-tinacms-remark",
-          'gatsby-tinacms-git',
+          // 'gatsby-tinacms-git',
+          {
+            resolve: "gatsby-tinacms-git",
+            options: {
+              sshKey: process.env.SSH_KEY
+            },
+          },
           // {
           //   resolve: "gatsby-tinacms-git",
           //   options: {

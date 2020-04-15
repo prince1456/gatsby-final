@@ -28,7 +28,7 @@ const { Title, Paragraph } = Typography
 function BlogPostTemplate(props) {
   const siteTitle = props.data.site.siteMetadata.title
   const { previous, next } = props.pageContext
-  const { allMarkdownRemark: { edges } } = props.data
+  // const { allMarkdownRemark: { edges } } = props.data
   const cms = useCMS()
   const [post, form] = useLocalRemarkForm(
     props.data.markdownRemark,
@@ -220,7 +220,7 @@ function BlogPostTemplate(props) {
                 onSearch={value => console.log(value)}
                 style={{ width: 200, marginBottom: 30 }}
               />
-              {
+              {/* {
                 edges.map(({node: { frontmatter }}, index) => (
                   <div key={index} style={{display: 'flex'}}>
                     <Img style={{width: 100, height: 100}} fluid={frontmatter.featureImage.childImageSharp.fluid} />
@@ -229,7 +229,7 @@ function BlogPostTemplate(props) {
                     </Paragraph>
                   </div>
                 ))
-              }
+              } */}
             </Col>
           </Row>
         </Layout>
@@ -431,22 +431,22 @@ export const pageQuery = graphql`
         author
       }
     }
-    allMarkdownRemark(limit: 3) {
-      edges {
-        node {
-          frontmatter {
-            title
-            featureImage {
-              childImageSharp {
-                fluid(maxHeight: 100 maxWidth: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+    # allMarkdownRemark(limit: 3) {
+    #   edges {
+    #     node {
+    #       frontmatter {
+    #         title
+    #         featureImage {
+    #           childImageSharp {
+    #             fluid(maxHeight: 100 maxWidth: 100) {
+    #               ...GatsbyImageSharpFluid
+    #             }
+    #           }
+    #         }
+    #       }
+    #     }
+    #   }
+    # }
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       ...TinaRemark
       id
